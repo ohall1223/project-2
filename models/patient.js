@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
 class Patient extends Model {}
 
@@ -40,14 +40,12 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    
-    
-    },
-    {
+  },
+  {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'patient',
+    modelName: "patient",
   }
 );

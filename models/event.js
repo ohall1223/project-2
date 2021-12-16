@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
 class Event extends Model {}
 
@@ -32,14 +32,12 @@ Event.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    
-    
-    },
-    {
+  },
+  {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'events',
+    modelName: "events",
   }
 );
