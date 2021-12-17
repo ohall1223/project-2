@@ -13,11 +13,11 @@ Patient.init(
       autoIncrement: true,
         },
     user_id: {
-    type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      }, 
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id',
+        }, 
     },  
     firstName: {
       type: DataTypes.STRING,
@@ -35,7 +35,7 @@ Patient.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    CurrentMeds: {
+    currentMeds: {
       type: DataTypes.STRING,
       allowNull: true,
     },
