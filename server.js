@@ -11,19 +11,25 @@ const helpers = require("./utils/helpers");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//May need to be adjusted!!------------
 const sess = {
   secret: "Super secret secret",
-  cookie: {
-    // Stored in milliseconds (86400 === 1 day)
-    maxAge: 86400,
-  },
   resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
+  saveUninitialized: false,
 };
+
+// //May need to be adjusted!!------------
+// const sess = {
+//   secret: "Super secret secret",
+//   cookie: {
+//     // Stored in milliseconds (86400 === 1 day)
+//     maxAge: 86400,
+//   },
+//   resave: false,
+//   saveUninitialized: true,
+//   store: new SequelizeStore({
+//     db: sequelize,
+//   }),
+// };
 //---------------------------
 app.use(session(sess));
 
