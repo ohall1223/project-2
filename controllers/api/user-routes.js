@@ -25,6 +25,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+// login route
 router.post("/login", async (req, res) => {
   console.log(req.body);
   try {
@@ -63,5 +65,39 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Delete User
+// TODO: REQUIRE LOGGEDIN !!!!!!
+router.delete('/delete', (req, res) => {
+  console.log(req.session)
+  if (req.session.loggedIn) {
+    User.destroy({
+                  where: {
+                id: req.session.user.id,
+            }
+    })
+            .then((deletedUser) => {
+                res.json(deletedUser);
+            })
+            .catch((err) => res.json(err));
+    } else {
+        res.status(404).end();
+    }
+
+});
+
+// logout route
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+
 
 module.exports = router;
