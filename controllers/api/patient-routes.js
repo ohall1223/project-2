@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Patient, User } = require("../../models");
 
 
-// CREATE new patient -POST  UPDATE ROUTE ADDRESS
+// CREATE new patient -POST  
 router.post("/", async (req, res) => {
   try {
     const dbPatientData = await Patient.create({
@@ -40,7 +40,7 @@ router.get('/group/:user_id', async (req, res) => {
 // Pull up individual patient info -GET
 router.get('/:id', async (req, res) => 
 {
-    console.log("here it is", req.session);
+    // console.log("here it is", req.session);
   try {
       const dbPatientData = await Patient.findByPk(req.params.id);
     //    console.log(dbPatientData);
@@ -53,6 +53,30 @@ router.get('/:id', async (req, res) =>
 });
 
 // Update individual Patient info -PUT
-
+router.put('/:id', (req, res) => {
+    Patient.update(
+        {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        height: req.body.height || null,
+        weight: req.body.weight,
+        currentMeds: req.body.currentMeds || null,
+        primaryPhysician: req.body.primaryPhysician || null,
+        pharmacy: req.body.pharmacy || null,
+        },
+        {
+        where: {
+            id: req.params.id,
+        }
+        }
+    )
+    .then((updatedPatient) => {
+      // Sends the updated book as a json response
+      res.json(updatedPatient);
+    })
+    .catch((err) => res.json(err));
+});
 // Delete Patient and corresponding Events DELETE
+
+
 module.exports = router;
