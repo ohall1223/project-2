@@ -41,3 +41,5 @@ Event.init(
     modelName: "events",
   }
 );
+
+module.exports = Event;
