@@ -4,4 +4,10 @@ const sequelize = require("../config/connection");
 //same as above but for user-data.js
 const seedPatients = require("./user-data");
 
-const seedAll = async () => {};
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
+  await seedPatients();
+  process.exit(0);
+};
+
+seedAll();
