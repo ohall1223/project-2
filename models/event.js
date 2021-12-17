@@ -31,6 +31,13 @@ Event.init(
     medicationDosage: {
       type: DataTypes.INTEGER,
       allowNull: true,
+        },
+    patient_id: {
+        type: DataTypes.INTEGER,
+        references: {
+        model: 'patient',
+        key: 'id',
+      }, 
     },
   },
   {
