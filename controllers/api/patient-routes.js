@@ -23,11 +23,9 @@ router.post("/", async (req, res) => {
             res.status(500).json(err);
         }
     } else {
-    res.status(404).end();
+    res.status(403).end();
   }
 });
-
-// TODO: SELECT/ASSIGN active patient!!!
 
 
 // Pull up list of Patients for User -GET
@@ -50,14 +48,17 @@ router.get('/group/', async (req, res) => {
 });
 
 // Pull up individual patient info -GET
-// TODO: Can currently target other users patients
 router.get('/:id', async (req, res) => 
 {
-    if (req.session.loggedIn) {
+    if (req.session.loggedIn)  {
         try {
             const dbPatientData = await Patient.findByPk(req.params.id);
-            //    console.log(dbPatientData);
-            res.json(dbPatientData);
+            if (dbPatientData.user_id === req.session.user.id) {
+                //    console.log(dbPatientData);
+                res.json(dbPatientData);
+            } else {
+                res.status(403).end();
+            }
 
         } catch (err) {
             console.log(err);
@@ -69,10 +70,11 @@ router.get('/:id', async (req, res) =>
 });
 
 // Update individual Patient info -PUT
-// TODO: Can currently target other users patients
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
     if (req.session.loggedIn) {
-        Patient.update(
+        const dbPatientData  = await Patient.findByPk(req.params.id);
+        if (dbPatientData.user_id ===req.session.user.id) {
+            Patient.update(
             {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -92,26 +94,37 @@ router.put('/:id', (req, res) => {
                 // Sends the updated book as a json response
                 res.json(updatedPatient);
             })
-            .catch((err) => res.json(err));
+                .catch((err) => res.json(err));
+            
+            
+            }else {
+    res.status(403).end();
+  }
     } else {
-    res.status(404).end();
+    res.status(403).end();
   }
 });
 // Delete Patient: 
 // TODO: ADD corresponding Events DELETE!!!!!
 // TODO: Can currently target other users patients
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
     if (req.session.loggedIn) {
-        Patient.destroy({
-            where: {
-                id: req.params.id,
-            }
-        })
-            .then((deletedPatient) => {
-                res.json(deletedPatient);
+        const dbPatientData  = await Patient.findByPk(req.params.id);
+        if (dbPatientData.user_id === req.session.user.id) {
+
+            Patient.destroy({
+                where: {
+                    id: req.params.id,
+                }
             })
-            .catch((err) => res.json(err));
+                .then((deletedPatient) => {
+                    res.json(deletedPatient);
+                })
+                .catch((err) => res.json(err));
+        } else {
+            res.status(403).end();
+        }
     } else {
         res.status(404).end();
     }
