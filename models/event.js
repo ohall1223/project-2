@@ -12,24 +12,24 @@ Event.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    temperture: {
+    temperature: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
     temperatureTime: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     medication: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     medicationTime: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     medicationDosage: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
         },
     patient_id: {

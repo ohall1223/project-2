@@ -4,7 +4,7 @@ const { Patient, User } = require("../../models");
 
 // CREATE new patient -POST  
 router.post("/", async (req, res) => {
-    if (!req.session.loggedIn) {
+    if (req.session.loggedIn) {
         try {
             const dbPatientData = await Patient.create({
                 firstName: req.body.firstName,
@@ -106,8 +106,6 @@ router.put('/:id', async (req, res) => {
 });
 // Delete Patient: 
 // TODO: ADD corresponding Events DELETE!!!!!
-// TODO: Can currently target other users patients
-
 router.delete('/:id', async (req, res) => {
     if (req.session.loggedIn) {
         const dbPatientData  = await Patient.findByPk(req.params.id);

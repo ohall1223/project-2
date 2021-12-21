@@ -6,6 +6,6 @@ const eventRoutes = require("./event-routes");
 
 router.use("/users", userRoutes);
 router.use("/patient", patientRoutes);
-// router.use("/event", eventRoutes);
+router.use("/event", eventRoutes);
 
 module.exports = router;
