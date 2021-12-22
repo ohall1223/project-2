@@ -31,7 +31,11 @@ Event.init(
     medicationDosage: {
       type: DataTypes.STRING,
       allowNull: true,
-        },
+    },
+    eventDate: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     patient_id: {
         type: DataTypes.INTEGER,
         references: {
