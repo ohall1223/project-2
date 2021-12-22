@@ -91,7 +91,6 @@ router.put('/:id', async (req, res) => {
             }
         )
             .then((updatedPatient) => {
-                // Sends the updated book as a json response
                 res.json(updatedPatient);
             })
                 .catch((err) => res.json(err));
@@ -129,6 +128,23 @@ router.delete('/:id', async (req, res) => {
 
 });
 
+// Delete all patients for user -DELETE
+// TODO: Limit to signed in user.
+router.delete('/delete_all/:patient_id', async (req, res) => {
+    if (req.session.loggedIn) {
+            Patient.destroy({
+                where: {
+                    user_id: req.session.user.id,
+                }
+            })
+                .then((deletedEvent) => {
+                    res.json(deletedEvent);
+                })
+                .catch((err) => res.json(err));
+    } else {
+        res.status(403).end();
+    }
 
+});
 
 module.exports = router;
