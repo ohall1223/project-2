@@ -137,8 +137,8 @@ router.delete('/delete_all/:patient_id', async (req, res) => {
                     user_id: req.session.user.id,
                 }
             })
-                .then((deletedEvent) => {
-                    res.json(deletedEvent);
+                .then((deletedPatient) => {
+                    res.json(deletedPatient);
                 })
                 .catch((err) => res.json(err));
     } else {
