@@ -10,17 +10,20 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/output.css">
 </head>
-<body class="bg-gray-100">
+<body class="">
     <header class="container m-auto py-6">
         {{#if loggedIn}}
-        <div class="">
-        <h1 class="">{{user.name}}</h1>
-        <nav class=""></nav>
+        <div class="flex justify-between">
+        <h1 class="text-4xl font-bold text-blue-800">{{user.name}}</h1>
+        <nav class="text-4xl font-bold text-blue-800">Logout</nav>
         </div>
         {{else}}
-        <h1 class="">My Health Journal</h1>
+        <div class="flex justify-center">
+        <h1 class="text-6xl font-bold text-blue-800">My Health Journal</h1>
+        </div>
     </header>
-    <main class="flex flex-row items-center content-center h-screen">
+    <main class="flex flex-row items-center content-center h-screen shadow border-t-4
+        bg-gray-100">
             {{{ body }}}
     </main>
     <footer class=""></footer>
