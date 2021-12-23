@@ -8,10 +8,10 @@
     <link rel="dns-prefetch" href="//unpkg.com" />
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/output.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/output.css">
 </head>
-<body>
-    <header class="">
+<body class="bg-gray-100">
+    <header class="container m-auto py-6">
         {{#if loggedIn}}
         <div class="">
         <h1 class="">{{user.name}}</h1>
@@ -20,9 +20,14 @@
         {{else}}
         <h1 class="">My Health Journal</h1>
     </header>
-    <main class="">
+    <main class="flex flex-row items-center content-center h-screen">
             {{{ body }}}
     </main>
     <footer class=""></footer>
+    <script
+  src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
+  defer
+></script>
+<script src="../../public/js/calendar.js"></script>
 </body>
 </html>
