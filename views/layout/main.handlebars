@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Health Journal</title>
-    <link rel="dns-prefetch" href="//unpkg.com" />
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/output.css">
 </head>
 <body class="">
@@ -15,7 +12,7 @@
         {{#if loggedIn}}
         <div class="flex justify-between">
         <h1 class="text-4xl font-bold text-blue-800">{{user.name}}</h1>
-        <nav class="text-4xl font-bold text-blue-800">Logout</nav>
+        <button class="text-4xl font-bold text-blue-800">Logout</button>
         </div>
         {{else}}
         <div class="flex justify-center">
