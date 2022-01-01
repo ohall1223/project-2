@@ -20,3 +20,7 @@ router.get("/login", (req, res) => {
   res.render("landing");
 });
 module.exports = router;
+
+router.get("/static", (req, res) => {
+  res.render("static");
+});
