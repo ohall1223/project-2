@@ -8,9 +8,11 @@ router.get("/", (req, res) => {
   //   res.redirect("/");
   //   return;
   // }
-  const loggedInUser = { userEmail: req.session?.user?.email || null };
+  // console.log(req.session)
+  // const loggedInUser = { userEmail: req.session?.user?.email || null , loggedIn: req.session?.loggedIn || false };
 
-  res.render("landing", loggedInUser);
+  res.render("landing");
+    // res.render("landing", loggedInUser);
 });
 
 router.get("/journal", (req, res) => {
@@ -18,7 +20,7 @@ router.get("/journal", (req, res) => {
     res.redirect("/");
     return;
   }
-  const loggedInUser = { userEmail: req.session.user.email };
+  const loggedInUser = { userEmail: req.session.user.email, loggedIn:req.session.loggedIn  };
   res.render("journal", loggedInUser);
 });
 
