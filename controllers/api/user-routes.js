@@ -95,7 +95,8 @@ router.delete("/logout", (req, res) => {
     // req.session.loggedIn = false;
     // req.session.user = null;
     //   // res.status(204).end();
-
+    // res.redirect("/");
+  
     // res.clearCookie("connect.sid")
     res.send("successful logout");
   });
