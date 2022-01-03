@@ -17,8 +17,17 @@
 
       {{#if userEmail}}
         <div class="flex justify-between">
-          <h1 class="text-4xl font-bold text-blue-800">{{userEmail}}</h1>
-          <nav class="text-4xl font-bold text-blue-800">Logout</nav>
+          <h1 class="text-4xl font-bold text-blue-800">{{user.email}}</h1>
+          <nav>
+            <a
+              href="../form.handlebars"
+              class="text-4xl font-bold text-blue-800 px-4"
+            >Profile</a>
+            <a
+              href="../form.landing"
+              class="text-4xl font-bold text-blue-800 px-4"
+            >Logout</a>
+          </nav>
         </div>
       {{else}}
         <div class="flex justify-center">
