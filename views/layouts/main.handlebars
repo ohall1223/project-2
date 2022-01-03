@@ -22,11 +22,11 @@
             <a
               href="../journal"
               class="text-4xl font-bold text-blue-800 px-4"
-            >Profile</a>
-            <a
-              href="../"
+            >New Patient</a>
+            <p
+              {{!-- href="/" --}}
               class="text-4xl font-bold text-blue-800 px-4" id="logout"
-            >Logout</a>
+            >Logout</p>
           </nav>
         </div>
       {{else}}
@@ -38,6 +38,7 @@
     <main
       class="flex flex-row items-center justify-center h-screen shadow border-t-4 bg-gray-100"
     >
+
       {{{body}}}
     </main>
     <footer class=""></footer>
@@ -47,6 +48,7 @@
     ></script>
     {{#if loggedIn}}
   <script src="./js/logout.js"></script>
+  {{!-- <script src="./js/new_patient.js"></script> --}}
   {{/if}}
   </body>
 </html>
