@@ -14,7 +14,8 @@
   </head>
   <body class="">
     <header class="container m-auto py-6">
-      {{#if loggedIn}}
+
+      {{#if userEmail}}
         <div class="flex justify-between">
           <h1 class="text-4xl font-bold text-blue-800">{{user.email}}</h1>
           <nav>
@@ -44,6 +45,8 @@
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
       defer
     ></script>
-    <script src="../../public/js/calendar.js"></script>
+
   </body>
 </html>
+
+<script src="./js/logout.js"></script>
