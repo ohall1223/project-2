@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/journal");
+      document.location.replace("/form");
     } else {
       alert("Failed to log in.");
     }
