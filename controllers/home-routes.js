@@ -8,11 +8,10 @@ router.get("/", (req, res) => {
   //   res.redirect("/");
   //   return;
   // }
-  // console.log(req.session)
-  // const loggedInUser = { userEmail: req.session?.user?.email || null , loggedIn: req.session?.loggedIn || false };
+  console.log(req.session)
+  const loggedInUser = { userEmail: req.session?.user?.email || null , loggedIn: req.session?.loggedIn || false };
 
-  res.render("landing");
-    // res.render("landing", loggedInUser);
+  res.render("landing", loggedInUser);
 });
 
 router.get("/journal", (req, res) => {
@@ -25,12 +24,13 @@ router.get("/journal", (req, res) => {
 });
 
 router.get("/form", (req, res) => {
-  if (req.session.loggedIn) {
+  if (!req.session.loggedIn) {
     res.redirect("/");
     return;
   }
+    const loggedInUser = { userEmail: req.session.user.email, loggedIn:req.session.loggedIn  };
 
-  res.render("form");
+  res.render("form", loggedInUser);
 });
 
 router.get("/");

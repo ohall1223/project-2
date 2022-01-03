@@ -88,12 +88,13 @@ router.delete("/delete", (req, res) => {
 
 router.delete("/logout", (req, res) => {
   // if (req.session.loggedIn) {
+  console.log("HelloTHERE")
   req.session.destroy((err) => {
-    if (err) throw err  
+    if (err) { throw err }
     // req.session.loggedIn = false;
     // req.session.user = null;
     //   // res.status(204).end();
-  
+    else { res.redirect("/") }
     // res.clearCookie("connect.sid")
     //   res.send("successful logout")
     });
