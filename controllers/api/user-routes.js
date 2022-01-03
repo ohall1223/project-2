@@ -87,16 +87,17 @@ router.delete("/delete", (req, res) => {
 // logout route
 
 router.delete("/logout", (req, res) => {
+  console.log("hello world");
   // if (req.session.loggedIn) {
   req.session.destroy((err) => {
-    if (err) throw err  
+    if (err) throw err;
     // req.session.loggedIn = false;
     // req.session.user = null;
     //   // res.status(204).end();
-  
+
     // res.clearCookie("connect.sid")
-    //   res.send("successful logout")
-    });
+    res.send("successful logout");
+  });
   // } else {
   //   res.status(404).end();
   // }
