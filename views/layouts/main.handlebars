@@ -25,7 +25,7 @@
             >Profile</a>
             <a
               href="../"
-              class="text-4xl font-bold text-blue-800 px-4"
+              class="text-4xl font-bold text-blue-800 px-4" id="logout"
             >Logout</a>
           </nav>
         </div>
@@ -45,8 +45,9 @@
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
       defer
     ></script>
-
+    {{#if loggedIn}}
+  <script src="./js/logout.js"></script>
+  {{/if}}
   </body>
 </html>
 
-<script src="./js/logout.js"></script>
