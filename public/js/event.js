@@ -1,6 +1,7 @@
 const newEventHandler = async (event) => {
   event.preventDefault();
 
+  const patient_id = document.querySelector("#patientID").value.trim();
   const temperature = document
     .querySelector("#current-temperature")
     .value.trim();
@@ -27,13 +28,13 @@ const newEventHandler = async (event) => {
         currentSymptoms,
         additionalInfo,
         eventDate,
-        // patient_id, NEED TO REVISIT!!!!!!!
+        patient_id,
       }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/patientview");
+      const data = await response.json();
     } else {
       alert("Failed to patient creation.");
     }

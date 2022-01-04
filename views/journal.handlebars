@@ -1,3 +1,5 @@
+
+{{fetchPatients}}
 <section>
   <div class="antialiased sans-serif">
     <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
@@ -157,6 +159,9 @@
   <div class="mx-auto p-4 bg-white rounded-lg shadow-xl">
     <h2 class=""></h2>
     <form class="form create-event">
+      <div>
+        <select name="patient" id="patientID"></select>
+      </div>
       <div class="m-auto px-2 py-4">
         <label for="current-temperature">What is your current temperature?</label>
         <input
@@ -220,5 +225,18 @@
     </form>
   </div>
 </section>
+<script>
+  const fetchPatients = async (event) => {
+  const data = await fetch("/api/patient/group").then((res) => res.json());
+  console.log(data);
+  const select = document.querySelector("#patientID");
 
+  const options = data.patients.map(patient => 
+    `<option value="${patient.id}">${patient.firstName} ${patient.lastName}</option>`
+  );
+  
+  select.innerHTML = options.join(' ');
+};
+fetchPatients();
+</script>
 <script src="./js/calendar.js"></script>

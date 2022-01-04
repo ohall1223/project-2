@@ -33,7 +33,11 @@ const sess = {
 //---------------------------
 app.use(session(sess));
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
+// hbs.handlebars.registerHelper("fetchPatients", function () {
+//   const data = fetch("/api/patient/group").then((res) => res.json());
+//   console.log(data);
+// });
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
