@@ -20,9 +20,8 @@
           <h1 class="text-4xl font-bold text-blue-800">{{userEmail}}</h1>
           <nav>
             <a
-              href="../journal"
+              href="../form"
               class="text-4xl font-bold text-blue-800 px-4"
-
             >Create Patient</a>
             <button
               class="text-4xl font-bold text-blue-800 px-4"
@@ -49,9 +48,8 @@
       defer
     ></script>
     {{#if loggedIn}}
-  <script src="./js/logout.js"></script>
-  {{!-- <script src="./js/new_patient.js"></script> --}}
-  {{/if}}
+      <script src="./js/logout.js"></script>
+      <script src="./js/newPatient.js"></script>
+    {{/if}}
   </body>
 </html>
-
