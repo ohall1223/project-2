@@ -14,11 +14,11 @@ router.post("/", async (req, res) => {
     });
     console.log(dbUserData);
 
-    req.session.save(() => {
-      req.session.loggedIn = true;
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
-    });
+    //   res.status(200).json(dbUserData);
+    // });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -86,14 +86,23 @@ router.delete("/delete", (req, res) => {
 
 // logout route
 
-router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
+router.delete("/logout", (req, res) => {
+  console.log("hello world");
+  // if (req.session.loggedIn) {
+  console.log("HelloTHERE")
+  req.session.destroy((err) => {
+    if (err) throw err;
+    // req.session.loggedIn = false;
+    // req.session.user = null;
+    //   // res.status(204).end();
+    // res.redirect("/");
+  
+    // res.clearCookie("connect.sid")
+    res.send("successful logout");
+  });
+  // } else {
+  //   res.status(404).end();
+  // }
 });
 
 module.exports = router;

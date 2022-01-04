@@ -1,35 +1,29 @@
 <section class="">
   <div class="mx-auto p-4 bg-white rounded-lg shadow-xl">
     <h2 class="text-4xl font-bold text-blue-800">
-      Tell us about yourself
+      Tell us about your patient
     </h2>
     <div class="m-auto px-2 py-4">
-      <label for="height">What is the patient's full name?</label>
+
+      <label for="firstName">First name.</label>
+      <input class="border rounded-md w-full" type="text" id="firstName" />
+    </div>
+    <div class="m-auto px-2 py-4">
+      <label for="lastName">Last name</label>
+      <input class="border rounded-md w-full" type="text" id="lastName" />
+    </div>
+    <div class="m-auto px-2 py-4">
+      <label for="height">Patient's height?</label>
       <input class="border rounded-md w-full" type="text" id="height" />
     </div>
     <div class="m-auto px-2 py-4">
-      <label for="height">What is the patient's height?</label>
-      <input class="border rounded-md w-full" type="text" id="height" />
-    </div>
-    <div class="m-auto px-2 py-4">
-      <label for="weight">What is the patient's weight?</label>
+      <label for="weight">Patient's weight?</label>
       <input class="border rounded-md w-full" type="text" id="weight" />
     </div>
     <div class="m-auto px-2 py-4">
-      <label for="current-medication ">Does the patient have any medications?</label>
-      <input
-        class="border rounded-md w-full"
-        type="text"
-        id="current-medication"
-      />
-    </div>
-    <div class="m-auto px-2 py-4">
-      <label for="medication-dose">If so, what dosage is taken?</label>
-      <input
-        class="border rounded-md w-full"
-        type="text"
-        id="medication-dose"
-      />
+      <label for="primary-care">If patient has a Primary Care Physician, list
+        them here</label>
+      <input class="border rounded-md w-full" type="text" id="primary-care" />
     </div>
     <div class="m-auto px-2 py-4">
       <label for="primary-care">If the patient has a Primary Care Physician,
@@ -47,7 +41,7 @@
     </div>
     <div class="m-auto px-2 py-4">
       <button
-        class="bg-blue-500 text-white m-auto py-1 px-4 rounded-lg hover:bg-blue-400"
+        class="bg-blue-500 text-white m-auto py-1 px-4 rounded-lg hover:bg-blue-400 create-patient"
         type="submit"
       >
         Save
@@ -55,3 +49,4 @@
     </div>
   </div>
 </section>
+<script src="./js/new_patient.js"></script>
