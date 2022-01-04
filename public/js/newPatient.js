@@ -32,7 +32,9 @@ const createPatient = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/journal");
+      const data = await response.json();
+      console.log(data);
+      // document.location.replace("/journal");
     } else {
       alert("Failed to patient creation.");
     }
