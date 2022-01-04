@@ -1,0 +1,23 @@
+<section>
+  <div class="mx-auto p-4 bg-white rounded-lg shadow-xl">
+    <h2 class="text-4xl font-bold text-blue-800">
+      Patient List
+    </h2>
+    {{#each patient as |patient| }}
+<div class="m-auto px-2 py-4">
+ <label for="patientNames">Patient Names</label>
+    <h2>
+    
+    
+      <a href="/patient/{{patient.id}}">{{patient.name}}</a>
+    </h2>
+    
+    <p>Created by {{patient.user.name}} on {{format_date project.date_created}}</p>
+ 
+ 
+</div>
+{{/each}}
+
+   
+ 
+</section>

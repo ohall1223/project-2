@@ -14,11 +14,11 @@ Event.init(
     },
     temperature: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
     temperatureTime: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     medication: {
       type: DataTypes.STRING,
@@ -28,20 +28,24 @@ Event.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    medicationDosage: {
+    currentSymptoms: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    additionalInfo: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     eventDate: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     patient_id: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'patient',
-        key: 'id',
-      }, 
+      type: DataTypes.INTEGER,
+      references: {
+        model: "patient",
+        key: "id",
+      },
     },
   },
   {

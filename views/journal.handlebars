@@ -134,7 +134,7 @@
   </div>
 </section>
 <section class="">
-  <div class="mb-4">
+  {{! <div class="mb-4">
     <div class="inline-block relative w-64">
       <select
         class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
@@ -153,63 +153,71 @@
           ></path></svg>
       </div>
     </div>
-  </div>
+  </div> }}
   <div class="mx-auto p-4 bg-white rounded-lg shadow-xl">
     <h2 class=""></h2>
-    <div class="m-auto px-2 py-4">
-      <label for="hours-slept">How much sleep did you get?</label>
-      <input class="border rounded-md w-full" type="text" id="hours-slept" />
-    </div>
-    <div class="m-auto px-2 py-4">
-      <label for="current-temperature">What is your current temperature?</label>
-      <input
-        class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
-        type="text"
-        id="current-temperature"
-      />
-    </div>
-    <div class="m-auto px-2 py-4">
-      <label for="medication-taken">Have you taken any medication?</label>
-      <input
-        class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
-        type="text"
-        id="medication-taken"
-      />
-    </div>
-    <div class="m-auto px-2 py-4">
-      <label for="medication-time">If so, when?</label>
-      <input
-        class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
-        type="text"
-        id="medication-time"
-      />
-    </div>
+    <form class="form create-event">
+      <div class="m-auto px-2 py-4">
+        <label for="current-temperature">What is your current temperature?</label>
+        <input
+          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          type="text"
+          id="current-temperature"
+        />
+      </div>
+      <div class="m-auto px-2 py-4">
+        <label for="temp-time">What time did you take your temperature?</label>
+        <input class="border rounded-md w-full" type="text" id="temp-time" />
+      </div>
+      <div class="m-auto px-2 py-4">
+        <label for="medication-taken">Have you taken any medication?</label>
+        <input
+          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          type="text"
+          id="medication-taken"
+        />
+      </div>
+      <div class="m-auto px-2 py-4">
+        <label for="medication-time">If so, when?</label>
+        <input
+          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          type="text"
+          id="medication-time"
+        />
+      </div>
 
-    <div class="m-auto px-2 py-4">
-      <label for="current-symptoms">What are your current symptoms?</label>
-      <input
-        class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
-        type="text"
-        id="current-symptoms"
-      />
-    </div>
-    <div class="m-auto px-2 py-4">
-      <label for="additional-info">Any additional information you'd like to
-        record?</label>
-      <input
-        class="border rounded-md h-20 w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
-        type="text"
-        id="additional-info"
-      />
-    </div>
-    <div class="m-auto px-2 py-4">
-      <button
-        class="bg-blue-500 text-white m-auto py-1 px-4 rounded-lg hover:bg-blue-400"
-        type="submit"
-      >
-        Save
-      </button>
-    </div>
+      <div class="m-auto px-2 py-4">
+        <label for="current-symptoms">What are your current symptoms?</label>
+        <input
+          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          type="text"
+          id="current-symptoms"
+        />
+      </div>
+      <div class="m-auto px-2 py-4">
+        <label for="additional-info">Any additional information you'd like to
+          record?</label>
+        <input
+          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          type="text"
+          id="additional-info"
+      <div class="m-auto px-2 py-4">
+        <label for="event-date">Please enter a date (Format: MM/DD/YYYY)</label>
+        <input
+          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          type="text"
+          id="event-date"
+        />
+      </div>
+      <div class="m-auto px-2 py-4">
+        <button
+          class="bg-blue-500 text-white m-auto py-1 px-4 rounded-lg hover:bg-blue-400"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
   </div>
 </section>
 
