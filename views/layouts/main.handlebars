@@ -18,14 +18,18 @@
 
       {{#if loggedIn}}
         <div class="flex justify-between">
-          <h1 class="text-4xl font-bold text-blue-800">{{userEmail}}</h1>
+          <h1 class="text-2xl font-bold text-blue-800">{{userEmail}}</h1>
           <nav>
             <a
               href="../form"
-              class="text-4xl font-bold text-blue-800 px-4"
+              class="text-2xl font-bold text-blue-800 py-1 px-4 border-4 rounded-lg hover:bg-blue-100"
             >Create Patient</a>
+            <a
+              href="../patientview"
+              class="text-2xl font-bold text-blue-800 py-1 px-4 border-4 rounded-lg hover:bg-blue-100"
+            >Patient List</a>
             <button
-              class="text-4xl font-bold text-blue-800 px-4"
+              class="text-2xl font-bold text-blue-800 px-4 border-4 rounded-lg hover:bg-blue-100"
               id="logout"
             >Logout</button>
 
@@ -38,7 +42,7 @@
       {{/if}}
     </header>
     <main
-      class="flex flex-row items-center justify-center h-screen shadow border-t-4 bg-gray-100"
+      class="flex flex-row items-center justify-center h-screen shadow border-t-4 bg-gradient-to-r from-blue-200 via-gray-100 to-blue-200"
     >
 
       {{{body}}}
