@@ -35,6 +35,7 @@ const newEventHandler = async (event) => {
 
     if (response.ok) {
       const data = await response.json();
+      document.location.replace("/patientview");
     } else {
       alert("Failed to patient creation.");
     }

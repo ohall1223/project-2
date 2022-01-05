@@ -1,3 +1,17 @@
+const fetchPatients = async (event) => {
+  const data = await fetch("/api/patient/group").then((res) => res.json());
+  console.log(data);
+  const select = document.querySelector("#patientID");
+
+  const options = data.patients.map(
+    (patient) =>
+      `<option value="${patient.id}">${patient.firstName} ${patient.lastName}</option>`
+  );
+
+  select.innerHTML = options.join(" ");
+};
+fetchPatients();
+
 const MONTH_NAMES = [
   "January",
   "February",
