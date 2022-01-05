@@ -3,12 +3,12 @@
     <h1 class="text-4xl font-bold text-blue-800">
       Patient List
     </h1>
-
-<h2>
-  <ul name="patient" id= "patientView">
-    
-  </ul>
-</h2>
-   
- 
 </section>
+
+<section class="flex flex-row items-center">
+{{#each patient as |patients|}}
+{{> patient-card}}
+{{/each}}
+</section>
+
+<script src="./js/calendar.js"></script>
