@@ -3,10 +3,10 @@
 <section>
   <div class="antialiased sans-serif">
     <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
-      <div class="container mx-auto px-4 py-2 md:py-24">
+      <div class="hidden md:flex container mx-auto px-4 py-2 md:py-24">
         <!-- <div class="font-bold text-gray-800 text-xl mb-4">
 				Schedule Tasks
-			</div> -->
+			  </div> -->
 
         <div class="bg-white rounded-lg shadow overflow-hidden">
           <div class="flex items-center justify-between py-2 px-6">
@@ -156,72 +156,69 @@
       </div>
     </div>
   </div> }}
-  <div class="mx-auto p-4 bg-white rounded-lg shadow-xl">
+  <div class="w-11/12 mx-auto p-4 bg-white rounded-lg shadow-xl xs:w-full">
     <h2 class=""></h2>
     <form class="form create-event">
      <div class="inline-block relative w-64">
   <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" name="patient" id="patientID">
-    <option>Really long option that will likely overlap the chevron</option>
-    <option>Option 2</option>
-    <option>Option 3</option>
   </select>
   <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
   </div>
 </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <label for="current-temperature">What is your current temperature?</label>
         <input
-          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          class="text-xs border rounded-md w-full xs:text-base disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
           id="current-temperature"
         />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <label for="temp-time">What time did you take your temperature?</label>
-        <input class="border rounded-md w-full" type="text" id="temp-time" />
+        <input class="text-xs border rounded-md w-full xs:text-base" type="text" id="temp-time" />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <label for="medication-taken">Have you taken any medication?</label>
         <input
-          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          class="text-xs border rounded-md w-full xs:text-base disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
           id="medication-taken"
         />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <label for="medication-time">If so, when?</label>
         <input
-          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          class="text-xs border rounded-md w-full xs:text-base disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
           id="medication-time"
         />
       </div>
 
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <label for="current-symptoms">What are your current symptoms?</label>
         <input
-          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          class="text-xs border rounded-md w-full xs:text-base disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
           id="current-symptoms"
         />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <label for="additional-info">Any additional information you'd like to
           record?</label>
         <input
-          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          class="text-xs border rounded-md w-full xs:text-base disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
           id="additional-info"
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <label for="event-date">Please enter a date (Format: MM/DD/YYYY)</label>
         <input
-          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
+          class="text-xs border rounded-md w-full xs:text-base disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
           id="event-date"
         />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 xs:px-2 xs:py-4">
         <button
           class="bg-blue-500 text-white m-auto py-1 px-4 rounded-lg hover:bg-blue-400"
           type="submit"
