@@ -12,7 +12,7 @@ const fetchPatientInfo = async () => {
     <div class="mx-auto p-4 bg-white rounded-lg shadow-xl" id="patientCard">
       <h1 class="text-2xl border-b-4">${patient.firstName}</h1>
       <ul>
-        <li>First Name: ${patient.weight}</li>
+        <li>Weight: ${patient.weight}</li>
         <li>Height: ${patient.height}</li>
         <li>Pharmacy: ${patient.pharmacy}</li>
       </ul>
