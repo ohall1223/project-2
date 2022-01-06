@@ -4,18 +4,22 @@ const loginFormHandler = async (event) => {
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
   //remember ./users assigned directory
-  if (email && password) {
-    const response = await fetch("/api/users/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+  if (email) {
+    if (email && password) {
+      const response = await fetch("/api/users/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
 
-    if (response.ok) {
-      document.location.replace("/form");
-    } else {
-      alert("Failed to log in.");
+      if (response.ok) {
+        document.location.replace("/form");
+      } else {
+        alert("Failed to log in.");
+      }
     }
+  } else {
+    alert("You will need to provide the email you used to sign up.")
   }
 };
 
@@ -25,19 +29,37 @@ const signupFormHandler = async (event) => {
   // const username = document.querySelector("#username-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
+  const checkPassword = document.querySelector("#password-confirm").value.trim();
 
-  if (email && password) {
-    const response = await fetch("/api/users", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+    console.log(password === checkPassword)
 
-    if (response.ok) {
-      document.location.replace("/");
+  if (email) {
+    if (password) {
+      if (checkPassword) {
+        if (password === checkPassword) {
+          const response = await fetch("/api/users", {
+            method: "POST",
+            body: JSON.stringify({ email, password }),
+            headers: { "Content-Type": "application/json" },
+          });
+          // alert("Signup Successful!")
+          if (response.ok) {
+            
+            document.location.replace("/");
+          } else {
+            alert("Failed to sign up.");
+          }
+        } else {
+          alert("The passwords must match")
+        }
+      } else {
+        alert("The Confirm Password field needs to be filled out")
+      }
     } else {
-      alert("Failed to sign up.");
+      alert("The Password field needs to be filled out.")
     }
+  } else {
+    alert("No email provided.")
   }
 }
 ;
