@@ -53,6 +53,18 @@ router.get("/patientview", (req, res) => {
   res.render("patientview", loggedInUser);
 });
 
+router.get("/eventview", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  const loggedInUser = {
+    userEmail: req.session.user.email,
+    loggedIn: req.session.loggedIn,
+  };
+  res.render("eventview", loggedInUser);
+});
+
 router.get("/");
 router.get("/static", (req, res) => {
   res.render("static");
