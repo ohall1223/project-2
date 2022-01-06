@@ -18,20 +18,20 @@ The application's server is run through Heroku, so the average user will just ne
 
 My Health Journal is an application that can be ussed to track daily symptoms and medications of multiple sick patients at a time.
 
-Screen shot of log-in landing page:
+[Screen shot of log-in landing page:](assets/LandingPage.png)
 
-Screen shot of patient forms:
+[Screen shot of patient forms:](assets/PatientForm.png)
 
-Screen shot of an example calendar with sample patient data:
+[Screen shot of an example calendar with sample patient data:](assets/Calendar.png)
 
 ## Credits
 
 Group 3 team members:
-Will Barton
-Kerry Eames
-Matt Grogan
-Olivia Hall
-Thomas Highum
+[Will Barton](https://github.com/wwbarton)
+[Kerry Eames](https://github.com/KerryEames-Vris)
+[Matt Grogan](https://github.com/mattgrogandev)
+[Olivia Hall](https://github.com/ohall1223)
+[Thomas Highum](https://github.com/thomashighum)
 
 ## License
 
