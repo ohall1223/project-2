@@ -54,11 +54,7 @@ router.get("/", async (req, res) => {
 router.get("/group/", async (req, res) => {
   if (req.session.loggedIn) {
     try {
-      const dbEventData = await Event.findAll({
-        where: {
-          patient_id: req.body.patient_id,
-        },
-      });
+      const dbEventData = await Event.findAll({});
 
       console.log(dbEventData);
       res.json(dbEventData);
