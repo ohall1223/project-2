@@ -1,50 +1,70 @@
-<section>
-  <div class="mx-auto p-4 bg-white rounded-lg shadow-xl">
-    <h2 class="text-4xl font-bold text-blue-800">
+<section class="">
+  <div class="w-11/12 mx-auto p-4 bg-white rounded-lg shadow-xl sm:w-full">
+    <h2 class="text-lg font-bold text-blue-800 lg:text-4xl">
       Tell us about your patient
     </h2>
     <form class="form create-patient">
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
 
         <label for="firstName">First name</label>
-        <input class="border rounded-md w-full" type="text" id="firstName" />
+        <input
+          class="text-xs border rounded-md w-full xs:text-base"
+          type="text"
+          id="firstName"
+        />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
         <label for="lastName">Last name</label>
-        <input class="border rounded-md w-full" type="text" id="lastName" />
+        <input
+          class="text-xs border rounded-md w-full xs:text-base"
+          type="text"
+          id="lastName"
+        />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
         <label for="height">Patient's height in feet (example: 6.1)?</label>
-        <input class="border rounded-md w-full" type="text" id="height" />
+        <input
+          class="text-xs border rounded-md w-full xs:text-base"
+          type="text"
+          id="height"
+        />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
         <label for="weight">Patient's weight?</label>
-        <input class="border rounded-md w-full" type="text" id="weight" />
+        <input
+          class="text-xs border rounded-md w-full xs:text-base"
+          type="text"
+          id="weight"
+        />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
         <label for="currentMeds">If patient has any current medications, please
           list them here</label>
         <input
-          class="border rounded-md w-full"
+          class="text-xs border rounded-md w-full xs:text-base"
           type="text"
           id="current-medication"
         />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
         <label for="primaryPhysician">If the patient has a Primary Care
           Physician, list them here</label>
-        <input class="border rounded-md w-full" type="text" id="primary-care" />
+        <input
+          class="text-xs border rounded-md w-full xs:text-base"
+          type="text"
+          id="primary-care"
+        />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
         <label for="current-pharmacy">If the patient has a pharmacy, list them
           here</label>
         <input
-          class="border rounded-md w-full"
+          class="text-xs border rounded-md w-full xs:text-base"
           type="text"
           id="current-pharmacy"
         />
       </div>
-      <div class="m-auto px-2 py-4">
+      <div class="m-auto px-1 py-2 sm:px-2 xs:py-4">
         <button
           class="bg-blue-500 text-white m-auto py-1 px-4 rounded-lg hover:bg-blue-400"
           type="submit"
