@@ -37,6 +37,7 @@ router.post("/login", async (req, res) => {
 
     if (!dbUserData) {
       res.status(400).json({ message: "User does not exist" });
+      alert("User does not exist")
       return;
     }
 
@@ -45,6 +46,7 @@ router.post("/login", async (req, res) => {
 
     if (!validPassword) {
       res.status(400).json({ message: "Password is incorrect" });
+      alert("Password is incorrect")
       return;
     }
     req.session.save(() => {
@@ -62,6 +64,7 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+    alert("Login failed, please try again.")
   }
 });
 

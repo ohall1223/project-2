@@ -179,7 +179,54 @@
       </div>
       <div class="m-auto px-2 py-4">
         <label for="temp-time">What time did you take your temperature?</label>
-        <input class="border rounded-md w-full" type="text" id="temp-time" />
+        {{!-- <input class="border rounded-md w-full" type="text" id="temp-time" /> --}}
+
+        <div class="flex justify-center">
+            <div class="mt-2 p-5 w-40 bg-white rounded-lg shadow-xl">
+              <div class="flex">
+                <select
+                  name="hours"
+                  class="bg-transparent text-xl appearance-none outline-none"
+                  id="temperature-time-hours"
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">10</option>
+                  <option value="12">12</option>
+                </select>
+                <span class="text-xl mr-3">:</span>
+                <select
+                  name="minutes"
+                  class="bg-transparent text-xl appearance-none outline-none mr-4"
+                  id="temperature-time-minutes"
+                >
+                  <option value="00">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
+                </select>
+                <select
+                  name="ampm"
+                  class="bg-transparent text-xl appearance-none outline-none"
+                  id="temperature-time-ampm"
+                >
+                  <option value="am">AM</option>
+                  <option value="pm">PM</option>
+                </select>
+              </div>
+            </div>
+
+
+
+        
       </div>
       <div class="m-auto px-2 py-4">
         <label for="medication-taken">Have you taken any medication?</label>
@@ -191,11 +238,54 @@
       </div>
       <div class="m-auto px-2 py-4">
         <label for="medication-time">If so, when?</label>
-        <input
+        {{!-- <input
           class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
           id="medication-time"
-        />
+        /> --}}
+        <div class="flex justify-center">
+      <div class="mt-2 p-5 w-40 bg-white rounded-lg shadow-xl">
+        <div class="flex">
+          <select
+            name="hours"
+            class="bg-transparent text-xl appearance-none outline-none"
+            id="medication-time-hours"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">10</option>
+            <option value="12">12</option>
+          </select>
+          <span class="text-xl mr-3">:</span>
+          <select
+            name="minutes"
+            class="bg-transparent text-xl appearance-none outline-none mr-4"
+            id="medication-time-minutes"
+          >
+            <option value="00">00</option>
+            <option value="15">15</option>
+            <option value="30">30</option>
+            <option value="45">45</option>
+          </select>
+          <select
+            name="ampm"
+            class="bg-transparent text-xl appearance-none outline-none"
+            id="medication-time-ampm"
+          >
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+          </select>
+        </div>
+      </div>
+</div>
       </div>
 
       <div class="m-auto px-2 py-4">
@@ -212,15 +302,22 @@
         <input
           class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
           type="text"
-          id="additional-info"
+          id="additional-info"/>
       <div class="m-auto px-2 py-4">
-        <label for="event-date">Please enter a date (Format: MM/DD/YYYY)</label>
-        <input
-          class="border rounded-md w-full disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
-          type="text"
-          id="event-date"
-        />
+        <label for="event-date">Please select the date of the event.</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+          </div>
+          <input datepicker datepicker-buttons datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" id="event-date">
       </div>
+
+      </div>
+
+
+
+
+
       <div class="m-auto px-2 py-4">
         <button
           class="bg-blue-500 text-white m-auto py-1 px-4 rounded-lg hover:bg-blue-400"

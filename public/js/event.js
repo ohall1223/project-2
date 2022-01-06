@@ -5,11 +5,24 @@ const newEventHandler = async (event) => {
   const temperature = document
     .querySelector("#current-temperature")
     .value.trim();
-  const temperatureTime = document.querySelector("#temp-time").value.trim();
+  
+  const temperatureTimeHours = document.querySelector("#temperature-time-hours").value.trim();
+  const temperatureTimeMinutes = document.querySelector("#temperature-time-minutes").value.trim();
+  const temperatureTimeAMPM = document.querySelector("#temperature-time-ampm").value.trim();
+  
+  const temperatureTime = temperatureTimeHours.concat(":", temperatureTimeMinutes, temperatureTimeAMPM)
+
+
   const medication = document.querySelector("#medication-taken").value.trim();
-  const medicationTime = document
-    .querySelector("#medication-time")
-    .value.trim();
+
+
+  const medicationTimeHours = document.querySelector("#medication-time-hours").value.trim();
+  const medicationTimeMinutes = document.querySelector("#medication-time-minutes").value.trim();
+  const medicationTimeAMPM = document.querySelector("#medication-time-ampm").value.trim();
+
+  const medicationTime = medicationTimeHours.concat(":", medicationTimeMinutes, medicationTimeAMPM)
+  
+  
   const currentSymptoms = document
     .querySelector("#current-symptoms")
     .value.trim();
